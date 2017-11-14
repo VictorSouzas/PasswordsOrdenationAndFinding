@@ -1,5 +1,6 @@
 package Start;
 
+import Sorting.QuickSenha;
 import Sorting.QuickSort;
 
 import java.io.BufferedReader;
@@ -16,7 +17,7 @@ public class Principal {
             String caminho = abrir.getSelectedFile().getAbsolutePath();
             Senha[] senhas = leArquivo(caminho);
             System.out.println("Arquivo lido com sucesso");
-            QuickSort quick = new QuickSort(senhas);
+            QuickSenha quick = new QuickSenha(senhas);
             senhas = quick.getVector();
             for (int i = 0; i < senhas.length; i++){
                 System.out.println(senhas[i].getFrequencia());
