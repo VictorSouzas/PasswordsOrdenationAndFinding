@@ -33,7 +33,7 @@ public abstract class QuickSort<T> {
     }
 
 
-    public abstract boolean greaterOrEqualThan(T x, T y);
+    protected abstract boolean greaterOrEqualThan(T x, T y);
 
 
     private void swap(int wall, int i) {
