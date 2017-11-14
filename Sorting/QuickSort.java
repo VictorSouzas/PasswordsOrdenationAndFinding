@@ -1,10 +1,12 @@
-public class QuickSort {
-    Senha[] vector;
-    public QuickSort(Senha[] vector){
+package Sorting;
+
+public abstract class QuickSort<T> {
+    T[] vector;
+    public QuickSort(T[] vector){
         this.vector = vector;
     }
 
-    public Senha[] getVector() {
+    public T[] getVector() {
         sort(0, vector.length-1);
         return vector;
     }
@@ -18,10 +20,10 @@ public class QuickSort {
     }
 
     private int partition(int min, int max) {
-        Senha pivot = this.vector[max];
+        T pivot = this.vector[max];
         int wall = min-1;
         for (int i = min; i <= max-1; i++){
-            if(this.vector[i].getFrequencia() >= pivot.getFrequencia()){
+            if(this.greaterOrEqualThan(this.vector[i], pivot)){
                 wall++;
                 swap(wall,i);
             }
@@ -30,8 +32,12 @@ public class QuickSort {
         return wall+1;
     }
 
+
+    public abstract boolean greaterOrEqualThan(T x, T y);
+
+
     private void swap(int wall, int i) {
-        Senha aux = this.vector[wall];
+        T aux = this.vector[wall];
         this.vector[wall] = this.vector[i];
         this.vector[i] = aux;
 

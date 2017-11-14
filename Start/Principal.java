@@ -1,3 +1,7 @@
+package main;
+
+import Sorting.QuickSort;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -12,7 +16,11 @@ public class Principal {
             String caminho = abrir.getSelectedFile().getAbsolutePath();
             Senha[] senhas = leArquivo(caminho);
             System.out.println("Arquivo lido com sucesso");
-
+            QuickSort quick = new QuickSort(senhas);
+            senhas = quick.getVector();
+            for (int i = 0; i < senhas.length; i++){
+                System.out.println(senhas[i].getFrequencia());
+            }
             
         } else { //Caso não seja selecionado um arquivo
             System.out.println("É necessário escolher o arquivo");
