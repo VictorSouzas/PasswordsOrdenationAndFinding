@@ -11,7 +11,7 @@ public abstract class QuickSort<T> {
         return vector;
     }
 
-    private void sort(int min, int max){
+    public void sort(int min, int max){
         if(min < max){
             int patition = partition(min, max);
             sort(min, patition-1);
