@@ -1,11 +1,11 @@
-package searching;
+package Searching;
 
 import Start.Senha;
 
 
-public final class BinaryPasswordIntervalBySize extends Binary<Senha, Integer> {
+public final class BinaryPasswordIntervalByFrequency extends Binary<Senha, Integer> {
 
-    public BinaryPasswordIntervalBySize(Senha[] vector) {
+    public BinaryPasswordIntervalByFrequency(Senha[] vector) {
         super(vector);
     }
 
@@ -18,7 +18,7 @@ public final class BinaryPasswordIntervalBySize extends Binary<Senha, Integer> {
     private int searchBackwards(int position){
         if(position < 0 || position > this.vector.length-1)
             return -1;
-        if(this.vector[position-1].getTamanho() != this.vector[position].getTamanho())
+        if(this.vector[position-1].getFrequencia() != this.vector[position].getFrequencia())
             return position;
         return searchBackwards(position-1);
     }
@@ -26,23 +26,23 @@ public final class BinaryPasswordIntervalBySize extends Binary<Senha, Integer> {
     private int searchForward(int position){
         if(position > this.vector.length-1 || position < 0)
             return -1;
-        if(this.vector[position+1].getTamanho() != this.vector[position].getTamanho())
+        if(this.vector[position+1].getFrequencia() != this.vector[position].getFrequencia())
             return position;
         return searchForward(position+1);
     }
 
     @Override
     protected boolean equalsTo(Senha x, Integer y) {
-        return x.getTamanho() == y;
+        return x.getFrequencia() == y;
     }
 
     @Override
     protected boolean greaterThan(Senha x, Integer y) {
-        return x.getTamanho() > y;
+        return x.getFrequencia() > y;
     }
 
     @Override
     protected boolean lowerThan(Senha x, Integer y) {
-        return x.getTamanho() < y;
+        return x.getFrequencia() < y;
     }
 }

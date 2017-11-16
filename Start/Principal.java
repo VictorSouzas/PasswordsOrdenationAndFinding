@@ -1,7 +1,7 @@
 package Start;
 
-import Sorting.QuickSenha;
-import Sorting.QuickSort;
+import Sorting.QuickByPasswordFrequency;
+import Searching.BinaryPasswordIntervalByFrequency;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -17,11 +17,11 @@ public class Principal {
             String caminho = abrir.getSelectedFile().getAbsolutePath();
             Senha[] senhas = leArquivo(caminho);
             System.out.println("Arquivo lido com sucesso");
-            QuickSenha quick = new QuickSenha(senhas);
+            QuickByPasswordFrequency quick = new QuickByPasswordFrequency(senhas);
             senhas = quick.getVector();
-            for (int i = 0; i < senhas.length; i++){
-                System.out.println(senhas[i].getFrequencia());
-            }
+            BinaryPasswordIntervalByFrequency binary = new BinaryPasswordIntervalByFrequency(senhas);
+           int[] interval =  binary.searchInterval(35, 25);
+
             
         } else { //Caso não seja selecionado um arquivo
             System.out.println("É necessário escolher o arquivo");

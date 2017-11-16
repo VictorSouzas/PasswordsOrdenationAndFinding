@@ -1,7 +1,7 @@
 package Sorting;
 
 public abstract class QuickSort<T> {
-    T[] vector;
+    private T[] vector;
     public QuickSort(T[] vector){
         this.vector = vector;
     }

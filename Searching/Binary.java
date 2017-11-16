@@ -1,4 +1,4 @@
-package searching;
+package Searching;
 
 public abstract class Binary<T,G> {
     protected T[] vector;
