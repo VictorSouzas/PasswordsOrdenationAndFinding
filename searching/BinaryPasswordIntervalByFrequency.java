@@ -3,9 +3,9 @@ package searching;
 import Start.Senha;
 
 
-public final class BinaryPassword extends Binary<Senha, Integer> {
+public final class BinaryPasswordIntervalByFrequency extends Binary<Senha, Integer> {
 
-    public BinaryPassword(Senha[] vector) {
+    public BinaryPasswordIntervalByFrequency(Senha[] vector) {
         super(vector);
     }
 
