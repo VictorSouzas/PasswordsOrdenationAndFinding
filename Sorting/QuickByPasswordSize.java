@@ -2,7 +2,7 @@ package Sorting;
 
 import Start.Senha;
 
-public class QuickByPasswordSize extends QuickSort<Senha> {
+public final class QuickByPasswordSize extends QuickSort<Senha> {
     public QuickByPasswordSize(Senha[] vector) {
         super(vector);
     }
