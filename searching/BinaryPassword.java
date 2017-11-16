@@ -3,7 +3,7 @@ package searching;
 import Start.Senha;
 
 
-public class BinaryPassword extends Binary<Senha, Integer> {
+public final class BinaryPassword extends Binary<Senha, Integer> {
 
     public BinaryPassword(Senha[] vector) {
         super(vector);
